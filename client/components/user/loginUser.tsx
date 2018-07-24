@@ -39,10 +39,10 @@ class LogInUser extends React.Component<componentProps, componentState>
     }
 
     handleInputChange = (event:any) => {
-        // event.preventDefault();
-        // this.setState({
-        //   [event.target.name]: event.target.value,
-        // });
+        event.preventDefault();
+        this.setState({
+          [event.target.name]: event.target.value,
+        });
       }
 
 

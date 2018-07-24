@@ -5,6 +5,7 @@ var distPath=path.resolve(__dirname,"public");
 var config={
     devtool:'source-map',
     entry:[
+        'babel-polyfill',
         srcPath+"/app.js"
     ],
     output:{  

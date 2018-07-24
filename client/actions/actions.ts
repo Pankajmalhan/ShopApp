@@ -5,20 +5,6 @@ const request = require('superagent');
 var serverUrl='http://localhost:5500/api/';
 
 export class Actions {
-
-    /******* Start Sync Action **************/
-    // public static getCategory(){
-    //     return {
-    //         type: 'CATEGORY_LIST'
-    //     }
-    // }
-
-    // public static getProductList(){
-    //     return {
-    //         type: 'NEW_ARRIVALS'
-    //     }
-    // }
-
     public static loadCategory(categoryData:ICategory[]){
         return {
             type:'Load_Category',
@@ -74,12 +60,12 @@ export class Actions {
     }
 
     
-    public static getNewArrivals(){
-        return (dispatch:any,getState:any)=>{
-            return request
-            .get(serverUrl+'products')
-        }
-    }
+    // public static getNewArrivals(){
+    //     return (dispatch:any,getState:any)=>{
+    //         return request
+    //         .get(serverUrl+'products')
+    //     }
+    // }
 
     public static getAllProductsById(id:number){
         return (dispatch:any,getState:any)=>{
@@ -99,34 +85,14 @@ export class Actions {
     }
 
     public static getCateData(){
-        var thisObj=this;
-        return (dispatch:any,getState:any)=>{
-            return request
-            .get(serverUrl+'category')
-            .set('Accept', 'application/json')
-            .end(function(err:any, res:any){
-				if (err || !res.ok) {
-				  console.log("oops! Something going wrong");
-				} else {
-                    console.log(thisObj);
-						dispatch(thisObj.loadCategory(res.body)) 
-				}
-			  });
-        }
+       return {
+           type:'GET_CATEGORY_DATA'
+       }
     }
 
     public static getNewArrivalData(){
-        return (dispatch:any,getState:any)=>{
-            return request
-            .get(serverUrl+'products')
-            .set('Accept', 'application/json')
-            .end(function(err:any, res:any){
-				if (err || !res.ok) {
-				  console.log("oops! Something going wrong");
-				} else {
-					dispatch(Actions.loadNewArrivals(res.body)) 
-				}
-			  });
+       return {
+            type:'GET_NEW_ARRIVALS'
         }
     }
 

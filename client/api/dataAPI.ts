@@ -1,9 +1,9 @@
 const request = require('superagent');
 var serverUrl='http://localhost:5500/api/';
+import axios from 'axios';
 export class ProjectAPI{
     public static getCategoryData():any{
-      return request
-        .get(serverUrl+'category');
+      return axios.get(serverUrl+'category')
     }
 
     public static getNewArrivals():any{
