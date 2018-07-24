@@ -1,0 +1,20 @@
+{
+  "name": "react-setup",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Pankaj Kumar Choudhary"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Pankajmalhan/reactsetup-with-nodejs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "bootstrap4#^3.3.7"
+  }
+}
